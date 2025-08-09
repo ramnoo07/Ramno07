@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramno07</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        h1 {
+            color: rgb(172, 193, 32);
+            font-size: 50px;
+            font-style: italic;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        p {
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            font-style: italic;
+            text-align: center;
+        }
+        body {
+            background-color: rgb(114, 113, 113);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to the Game!</h1>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeaVl2gcoWJuy1GKevZLNVVkl3MvVNU0SsFlWO7xlB_PeZ9hw/viewform?embedded=true" width="640" height="1892" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <p id="result"></p>
+
+    <script>
+        const questions = [
+            "What is your name?",
+            "How old are you?",
+            "What is your favorite thing about me (ramno07)?",
+            "In one word, describe yourself?",
+            "ONLY one advice would you give to younger you?",
+            "Why did you click the link i might just hack your accounts?",
+            "I am joking relax (type ok)",
+            "OR I'm not?",
+            "What if I actually could hack your account?",
+            "Just kidding! What's your favorite color?"
+        ];
+        let current = 0;
+        const answers = [];
+
+        function showQuestion() {
+            if (current < questions.length) {
+                document.getElementById('question').textContent = questions[current];
+                document.getElementById('answer').value = '';
+            } else {
+                document.getElementById('quiz').style.display = 'none';
+                document.getElementById('result').textContent = "I just wasted your time with these questions 😂😂😂";
+            }
+        }
+
+        function nextQuestion() {
+            const ans = document.getElementById('answer').value;
+            answers.push(ans);
+            current++;
+            showQuestion();
+        }
+
+        showQuestion();
+    </script>
+</body>
+
+</html>
